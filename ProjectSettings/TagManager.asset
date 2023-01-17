@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Enemy
+  - interactable
+  - SfxAudioSource
+  - SimpleDialog
+  - PersonalizedDialog
+  - MainUICanvas
   layers:
   - Default
   - TransparentFX
@@ -11,16 +18,16 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Interactables
+  - Trash
+  - Hero
+  - Walls
+  - Enemies
+  - Checkers
+  - Collectables
+  - ColladableEmenies
+  - ForseShield
   - 
   - 
   - 
@@ -40,4 +47,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backgraund
+    uniqueID: 842807435
+    locked: 0
+  - name: Frontgraund
+    uniqueID: 3011462757
+    locked: 0
+  - name: Main
+    uniqueID: 3419088985
+    locked: 0
+  - name: Level
+    uniqueID: 3469090481
+    locked: 0
+  - name: Overlay
+    uniqueID: 1008999673
     locked: 0
