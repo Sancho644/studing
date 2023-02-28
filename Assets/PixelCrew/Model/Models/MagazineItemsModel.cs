@@ -1,7 +1,6 @@
 ﻿using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
-using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Utils.Disposables;
 using System;
 
@@ -19,7 +18,7 @@ namespace PixelCrew.Model.Models
         public MagazineItemsModel(PlayerData data)
         {
             _data = data;
-            InterfaceSelection.Value = DefsFacade.I.Items.All[0].Id;
+            InterfaceSelection.Value = DefsFacade.I.Items.All[1].Id;
 
             _trash.Retain(InterfaceSelection.Subscribe((x, y) => OnChanged?.Invoke()));
         }

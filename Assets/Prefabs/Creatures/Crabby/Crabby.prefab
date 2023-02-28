@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 373739249}
   - component: {fileID: 373739250}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ObstacleCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 511513861}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017854679}
   - component: {fileID: 2230542098517705871}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PatrolGroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,13 +138,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1727496139}
   - component: {fileID: 1727496140}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: DeadCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1727496139
 Transform:
   m_ObjectHideFlags: 0
@@ -175,6 +175,259 @@ CircleCollider2D:
   m_Offset: {x: 0.050000012, y: 0.03025788}
   serializedVersion: 2
   m_Radius: 0.27482992
+--- !u!1 &1736391359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736391360}
+  - component: {fileID: 1736391361}
+  m_Layer: 11
+  m_Name: DieDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736391360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736391359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -81.84, y: -9.160999, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3118652027041733917}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736391361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736391359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09f87daa74ee8c43b4b8215c5610c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - _valued: boss_fight_end_1
+      _icon: {fileID: 21300000, guid: 160de6c58d1d9554c9c5cc40c97b50e7, type: 3}
+      _side: 1
+    - _valued: boss_fight_end_2
+      _icon: {fileID: 21300000, guid: f8d8d7ce41a0e1743b44b6f18e6a16d8, type: 3}
+      _side: 0
+    _type: 1
+  _external: {fileID: 0}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PixelCrew.Components.Interactions.SwitchComponent,
+          Assembly-CSharp
+        m_MethodName: Switch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &1898809190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1898809191}
+  - component: {fileID: 1898809193}
+  - component: {fileID: 1898809192}
+  m_Layer: 11
+  m_Name: StartDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1898809191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898809190}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -81.84, y: -9.160999, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3118652027041733917}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898809193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898809190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09f87daa74ee8c43b4b8215c5610c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - _valued: boss_fight_start_1
+      _icon: {fileID: 21300000, guid: 160de6c58d1d9554c9c5cc40c97b50e7, type: 3}
+      _side: 1
+    - _valued: boss_fight_start_2
+      _icon: {fileID: 21300000, guid: f8d8d7ce41a0e1743b44b6f18e6a16d8, type: 3}
+      _side: 0
+    _type: 1
+  _external: {fileID: 0}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 321980512}
+        m_TargetAssemblyTypeName: PixelCrew.Creatures.Mobs.Patrolling.PlatformPatrol,
+          Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: start
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PixelCrew.Components.ColliderBased.CheckCircleOverlap,
+          Assembly-CSharp
+        m_MethodName: Check
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1898809192}
+        m_TargetAssemblyTypeName: PixelCrew.Components.PostEffects.SetPostEffectProfile,
+          Assembly-CSharp
+        m_MethodName: Set
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PixelCrew.Components.Interactions.SwitchComponent,
+          Assembly-CSharp
+        m_MethodName: Switch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.DestroyObjectComponent,
+          Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1898809192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898809190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f560d80e470a2e40a6350434d5e8167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _profile: {fileID: 11400000, guid: 3e21bef82edfdd243b4d2971659ae552, type: 2}
+--- !u!1 &1233270516506291384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6586419819437169228}
+  - component: {fileID: 1579294372195323380}
+  m_Layer: 11
+  m_Name: AttackEffectPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6586419819437169228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233270516506291384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.003, y: -0.048, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3118652027041733917}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1579294372195323380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233270516506291384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2139406952683ec499c51c675b34429e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 6586419819437169228}
+  _prefab: {fileID: 2256871657400613305, guid: a22eeea30b4b657499c2cca1db54e5bf, type: 3}
+  _invertXScale: 0
+  _usePool: 1
 --- !u!1 &1356272388473103618
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1154257632164546048}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2163564325467301880}
   - component: {fileID: 86187672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FootStepPosition
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -363,6 +616,7 @@ MonoBehaviour:
   _target: {fileID: 2163564325467301880}
   _prefab: {fileID: 2256871657400613305, guid: c1d0da2cdf560e843831789509dba089, type: 3}
   _invertXScale: 1
+  _usePool: 1
 --- !u!1 &3118652027041733920
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +637,7 @@ GameObject:
   - component: {fileID: 321980512}
   - component: {fileID: 16519371}
   - component: {fileID: 1545352415}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Crabby
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -402,7 +656,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2163564325467301880}
-  - {fileID: 3771415508588019368}
+  - {fileID: 6586419819437169228}
   - {fileID: 2394900353112138729}
   - {fileID: 4031067654917349715}
   - {fileID: 651846514390325450}
@@ -413,6 +667,8 @@ Transform:
   - {fileID: 373739249}
   - {fileID: 4066601968274245083}
   - {fileID: 7305810748691180237}
+  - {fileID: 1898809191}
+  - {fileID: 1736391360}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -615,10 +871,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1727496140}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1727496138}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1736391361}
+        m_TargetAssemblyTypeName: Components.Dialogs.ShowDialogComponent, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -645,12 +913,12 @@ MonoBehaviour:
   _spawners:
   - Id: Run
     Component: {fileID: 86187672}
-  - Id: Jump
-    Component: {fileID: 1336067252}
   - Id: Exclamation
     Component: {fileID: 4746562641956092091}
   - Id: MissHero
     Component: {fileID: 6213629569602316562}
+  - Id: AttackEffect
+    Component: {fileID: 1579294372195323380}
 --- !u!114 &1548295929736990173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,8 +951,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundCheck: {fileID: 2230542098517705871}
   _obstacleCheck: {fileID: 373739250}
-  _creature: {fileID: 8878618859857003001}
-  _direction: 1
+  _direction: 0
+  _onChangeDirection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8878618859857003001}
+        m_TargetAssemblyTypeName: PixelCrew.Creatures.Creature, Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &16519371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,7 +1126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4031067654917349715}
   - component: {fileID: 6213629569602316562}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MissSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -880,52 +1162,7 @@ MonoBehaviour:
   _target: {fileID: 4031067654917349715}
   _prefab: {fileID: 2256871657400613305, guid: 167f251de122a974686fd48436ae9aaa, type: 3}
   _invertXScale: 0
---- !u!1 &4874368366620277600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3771415508588019368}
-  - component: {fileID: 1336067252}
-  m_Layer: 0
-  m_Name: JumpPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3771415508588019368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4874368366620277600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3118652027041733917}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1336067252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4874368366620277600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2139406952683ec499c51c675b34429e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 3771415508588019368}
-  _prefab: {fileID: 8156339520278185662, guid: 9fbd87166fcf3f547a3f87d5eb47ed7f, type: 3}
-  _invertXScale: 0
+  _usePool: 0
 --- !u!1 &5717224953196221567
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +1173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2394900353112138729}
   - component: {fileID: 4746562641956092091}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ExclamationSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -972,6 +1209,7 @@ MonoBehaviour:
   _target: {fileID: 2394900353112138729}
   _prefab: {fileID: 6753797111458649248, guid: e9843bddba0cd3940b25849a7ef7e6f7, type: 3}
   _invertXScale: 0
+  _usePool: 0
 --- !u!1 &5794241365282106887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1525,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 1}
+  m_Offset: {x: -1.8903885, y: 0.22787905}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1298,7 +1536,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 3}
+  m_Size: {x: 10.261734, y: 1.4557581}
   m_EdgeRadius: 0
 --- !u!114 &3118149974099267671
 MonoBehaviour:

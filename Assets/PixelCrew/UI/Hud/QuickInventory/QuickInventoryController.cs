@@ -2,7 +2,6 @@
 using PixelCrew.Model.Data;
 using PixelCrew.UI.Widgets;
 using PixelCrew.Utils.Disposables;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrew.UI.Hud.QuickInventory
@@ -10,19 +9,19 @@ namespace PixelCrew.UI.Hud.QuickInventory
     public class QuickInventoryController : MonoBehaviour
     {
         [SerializeField] private Transform _container;
+        [SerializeField] private GameObject _containerObject;
         [SerializeField] private InventoryItemWidget _prefab;
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         private GameSession _session;
-        private List<InventoryItemWidget> _createdItem = new List<InventoryItemWidget>();
 
         private DataGroup<InventoryItemData, InventoryItemWidget> _dataGroup;
 
         private void Start()
         {
             _dataGroup = new DataGroup<InventoryItemData, InventoryItemWidget>(_prefab, _container);
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _trash.Retain(_session.QuickInventory.Subscride(Rebuild));
 
             Rebuild();
@@ -32,6 +31,11 @@ namespace PixelCrew.UI.Hud.QuickInventory
         {
             var inventory = _session.QuickInventory.Inventory;
             _dataGroup.SetData(inventory);
+
+            if (inventory.Length < 1)
+                _containerObject.SetActive(false);
+            else
+                _containerObject.SetActive(true);
         }
 
         private void OnDestroy()

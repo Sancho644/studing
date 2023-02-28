@@ -21,6 +21,7 @@ namespace PixelCrew.UI.Hud.Dialogs
 
         private static readonly int isOpen = Animator.StringToHash("isOpen");
 
+        private PersonalizedDialogBoxController _rightBox;
         private DialogData _data;
         private int _currentSentence;
         private AudioSource _sfxSource;
@@ -31,6 +32,7 @@ namespace PixelCrew.UI.Hud.Dialogs
 
         private void Start()
         {
+            _rightBox = FindObjectOfType<PersonalizedDialogBoxController>();
             _sfxSource = AudioUtils.FindSfxSource();
         }
 
@@ -95,6 +97,8 @@ namespace PixelCrew.UI.Hud.Dialogs
         private void HideDialogBox()
         {
             _animator.SetBool(isOpen, false);
+            _content.gameObject.SetActive(false);
+            _rightBox._right.gameObject.SetActive(false);
             _sfxSource.PlayOneShot(_close);
         }
 

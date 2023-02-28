@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6702383020312371180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6631669824584982020}
+  - component: {fileID: 215555934621276727}
+  - component: {fileID: 2280952577862524678}
+  m_Layer: 0
+  m_Name: HitDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6631669824584982020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6702383020312371180}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.007, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7411394528052624786}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &215555934621276727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6702383020312371180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35119a44cc804f48a0b9fb467e5d44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _count: 1
+  _spawnOnEnable: 0
+  _drop:
+  - Drop: {fileID: 5531752644684095544, guid: ccbc1ba0acd9b674f8df523827315911, type: 3}
+    Probabillity: 100
+  _onDropCalculated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2280952577862524678}
+        m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.RandomSpawner, Assembly-CSharp
+        m_MethodName: StarDrop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2280952577862524678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6702383020312371180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4878b84d16d244abe227f1e8a9c5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sectorAngle: 180
+  _sectorRotation: 0
+  _waitTime: 0.1
+  _speed: 1.5
+  _usePool: 1
 --- !u!1 &7411394527356502876
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,6 +129,7 @@ MonoBehaviour:
   _sectorRotation: 0
   _waitTime: 0.1
   _speed: 4
+  _usePool: 0
 --- !u!114 &7411394527356502879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 7411394527663759915}
-  _prefab: {fileID: 4793092569912071386, guid: 92ba866380b780a4cab797e2059463ae, type: 3}
+  _prefab: {fileID: 4793092569912071386, guid: 89e0c8d6f2f3dee4c96964f573937bcf, type: 3}
   _invertXScale: 0
+  _usePool: 0
 --- !u!1 &7411394528052624789
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +299,7 @@ GameObject:
   - component: {fileID: 7411394528052624781}
   - component: {fileID: 7411394528052624780}
   - component: {fileID: 5688518345675989462}
+  - component: {fileID: 8678918698952547317}
   m_Layer: 14
   m_Name: Totem3
   m_TagString: Enemy
@@ -237,6 +321,7 @@ Transform:
   - {fileID: 7411394527663759915}
   - {fileID: 7411394527594112430}
   - {fileID: 7411394527356502877}
+  - {fileID: 6631669824584982020}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -404,6 +489,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 215555934621276727}
+          m_TargetAssemblyTypeName: PixelCrew.Components.ProbabillityDropComponent,
+            Assembly-CSharp
+          m_MethodName: CalculateDrop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -545,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7411394528052624789}
-  _state: {fileID: 0}
+  _state: {fileID: 8678918698952547317}
 --- !u!114 &5688518345675989462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,3 +661,16 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 43ba6673e8b6a244494a72a2f0210b3c, type: 3}
   - _id: Range
     _clip: {fileID: 8300000, guid: 3dab06771a68da74db940f441377c818, type: 3}
+--- !u!114 &8678918698952547317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411394528052624789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc13d7c92e4f844b9ab4a9bdc86a7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: totem

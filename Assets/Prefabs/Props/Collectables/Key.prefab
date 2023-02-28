@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7332789832380336407}
   - component: {fileID: 6116007443084422062}
   - component: {fileID: 1896932991273981326}
+  - component: {fileID: 7088520134030889826}
   m_Layer: 13
   m_Name: Key
   m_TagString: Untagged
@@ -157,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 3804684268019776824}
-  _state: {fileID: 0}
+  _state: {fileID: 7088520134030889826}
 --- !u!58 &2666233177740439591
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -269,3 +270,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 4662b23eb3a758f44abb04cdfde881e4, type: 3}
+--- !u!114 &7088520134030889826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804684268019776824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc13d7c92e4f844b9ab4a9bdc86a7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: level1_key0

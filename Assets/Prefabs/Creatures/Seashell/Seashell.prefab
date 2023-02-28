@@ -278,6 +278,8 @@ GameObject:
   - component: {fileID: 3982308711025052704}
   - component: {fileID: 4324100407634472105}
   - component: {fileID: 574563561}
+  - component: {fileID: 2047161208161677897}
+  - component: {fileID: 7815821367786509040}
   m_Layer: 11
   m_Name: Seashell
   m_TagString: Enemy
@@ -514,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8188311331687033743}
-  _state: {fileID: 0}
+  _state: {fileID: 2047161208161677897}
 --- !u!114 &4324100407634472105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +532,7 @@ MonoBehaviour:
   _target: {fileID: 8188311331687033742}
   _prefab: {fileID: 8260384599165877321, guid: 9f141ac7ac72c124f917c7101f4a8c54, type: 3}
   _invertXScale: 0
+  _usePool: 0
 --- !u!114 &574563561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +552,32 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: aaf777bb4a7fac94293a00ebc7d86ce2, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 43ba6673e8b6a244494a72a2f0210b3c, type: 3}
+--- !u!114 &2047161208161677897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188311331687033743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc13d7c92e4f844b9ab4a9bdc86a7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: seashell
+--- !u!114 &7815821367786509040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188311331687033743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f5554187a7b5c498c32d308dd406bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _immuneTime: 1
 --- !u!1 &8188311331808570410
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +624,7 @@ MonoBehaviour:
   _target: {fileID: 8188311331808570409}
   _prefab: {fileID: 4793092569912071386, guid: b2c16677f967e05458c2014cde7b3515, type: 3}
   _invertXScale: 0
+  _usePool: 0
 --- !u!1 &8198995615483615819
 GameObject:
   m_ObjectHideFlags: 0

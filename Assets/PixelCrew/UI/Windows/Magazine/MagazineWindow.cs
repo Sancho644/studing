@@ -25,7 +25,7 @@ namespace PixelCrew.UI.Windows.Magazine
             base.Start();
 
             _dataGroup = new PredefinedDataGroup<ItemDef, MagazineItemWidjet>(_magazineContainer);
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
 
             _trash.Retain(_session.MagazineItemsModel.Subscribe(OnMagazineChanged));
 
@@ -45,7 +45,7 @@ namespace PixelCrew.UI.Windows.Magazine
             _infoText.text = LocalizationManager.I.Localize(def.Info);
         }
 
-        private void OnBuy()
+        public void OnBuy()
         {
             var selected = _session.MagazineItemsModel.InterfaceSelection.Value;
             _session.MagazineItemsModel.BuyItem(selected, 1);

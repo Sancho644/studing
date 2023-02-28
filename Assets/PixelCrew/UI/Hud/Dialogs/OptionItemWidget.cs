@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System;
 using PixelCrew.UI.Widgets;
+using PixelCrew.Utils;
 
 namespace PixelCrew.UI.Hud.Dialogs
 {
@@ -16,7 +17,7 @@ namespace PixelCrew.UI.Hud.Dialogs
         public void SetData(OptionData data, int index)
         {
             _data = data;
-            _label.text = data.Text;
+            _label.text = data.Text.Localize();
         }
 
         public void OnSelect()

@@ -8,9 +8,9 @@ namespace PixelCrew.Components
     public class ProbabillityDropComponent : MonoBehaviour
     {
         [SerializeField] private int _count;
+        [SerializeField] private bool _spawnOnEnable;
         [SerializeField] private DropData[] _drop;
         [SerializeField] private DropEvent _onDropCalculated;
-        [SerializeField] private bool _spawnOnEnable;
 
         private void OnEnable()
         {

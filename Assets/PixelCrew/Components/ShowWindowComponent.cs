@@ -11,5 +11,10 @@ namespace PixelCrew.Components
         {
             WindowUtils.CreateWindow(_path);
         }
+
+        public void ShowIt(string path)
+        {
+            WindowUtils.CreateWindow(path);
+        }
     }
 }

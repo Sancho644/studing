@@ -424,7 +424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1727496139
 Transform:
   m_ObjectHideFlags: 0
@@ -643,6 +643,7 @@ MonoBehaviour:
   _target: {fileID: 2163564325467301880}
   _prefab: {fileID: 2256871657400613305, guid: c1d0da2cdf560e843831789509dba089, type: 3}
   _invertXScale: 1
+  _usePool: 1
 --- !u!1 &3118652027041733920
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +663,9 @@ GameObject:
   - component: {fileID: 1548295929736990173}
   - component: {fileID: 321980512}
   - component: {fileID: 916675638640383261}
+  - component: {fileID: 5911355206244538394}
+  - component: {fileID: 2194245911322148742}
+  - component: {fileID: 2948960534278152177}
   m_Layer: 0
   m_Name: Sharky
   m_TagString: Enemy
@@ -681,7 +685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2163564325467301880}
-  - {fileID: 3771415508588019368}
+  - {fileID: 2657318572119599481}
   - {fileID: 2394900353112138729}
   - {fileID: 4031067654917349715}
   - {fileID: 651846514390325450}
@@ -906,6 +910,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2194245911322148742}
+        m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.DestroyObjectComponent,
+          Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -924,12 +941,12 @@ MonoBehaviour:
   _spawners:
   - Id: Run
     Component: {fileID: 86187672}
-  - Id: Jump
-    Component: {fileID: 1336067252}
   - Id: Exclamation
     Component: {fileID: 4746562641956092091}
   - Id: MissHero
     Component: {fileID: 6213629569602316562}
+  - Id: AttackEffect
+    Component: {fileID: 1621635605485384354}
 --- !u!114 &1548295929736990173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,8 +979,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundCheck: {fileID: 2230542098517705871}
   _obstacleCheck: {fileID: 373739250}
-  _creature: {fileID: 8878618859857003001}
   _direction: 1
+  _onChangeDirection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8878618859857003001}
+        m_TargetAssemblyTypeName: PixelCrew.Creatures.Creature, Assembly-CSharp
+        m_MethodName: SetDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &916675638640383261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +1012,46 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: aaf777bb4a7fac94293a00ebc7d86ce2, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 43ba6673e8b6a244494a72a2f0210b3c, type: 3}
+--- !u!114 &5911355206244538394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118652027041733920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc13d7c92e4f844b9ab4a9bdc86a7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: sharky
+--- !u!114 &2194245911322148742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118652027041733920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889b316a65ea997439bd2f06dfd1fc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 0}
+  _state: {fileID: 5911355206244538394}
+--- !u!114 &2948960534278152177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118652027041733920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f5554187a7b5c498c32d308dd406bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _immuneTime: 1
 --- !u!1 &4263557655040859460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,52 +1098,7 @@ MonoBehaviour:
   _target: {fileID: 4031067654917349715}
   _prefab: {fileID: 2256871657400613305, guid: 167f251de122a974686fd48436ae9aaa, type: 3}
   _invertXScale: 0
---- !u!1 &4874368366620277600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3771415508588019368}
-  - component: {fileID: 1336067252}
-  m_Layer: 0
-  m_Name: JumpPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3771415508588019368
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4874368366620277600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3118652027041733917}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1336067252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4874368366620277600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2139406952683ec499c51c675b34429e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 3771415508588019368}
-  _prefab: {fileID: 8156339520278185662, guid: 9fbd87166fcf3f547a3f87d5eb47ed7f, type: 3}
-  _invertXScale: 0
+  _usePool: 0
 --- !u!1 &5717224953196221567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1145,7 @@ MonoBehaviour:
   _target: {fileID: 2394900353112138729}
   _prefab: {fileID: 6753797111458649248, guid: e9843bddba0cd3940b25849a7ef7e6f7, type: 3}
   _invertXScale: 0
+  _usePool: 0
 --- !u!1 &5846608097973610330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1210,53 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _isTouchingLayer: 0
+--- !u!1 &7948393672479062932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2657318572119599481}
+  - component: {fileID: 1621635605485384354}
+  m_Layer: 0
+  m_Name: AttackEffectPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2657318572119599481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948393672479062932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.90900004, y: 0.282, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3118652027041733917}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1621635605485384354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948393672479062932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2139406952683ec499c51c675b34429e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2657318572119599481}
+  _prefab: {fileID: 2256871657400613305, guid: ffce495f08ce40149ac16adb93ce4640, type: 3}
+  _invertXScale: 0
+  _usePool: 1
 --- !u!1 &8233119108036004467
 GameObject:
   m_ObjectHideFlags: 0

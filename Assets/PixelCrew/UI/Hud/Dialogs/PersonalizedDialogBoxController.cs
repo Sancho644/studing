@@ -5,7 +5,7 @@ namespace PixelCrew.UI.Hud.Dialogs
 {
     public class PersonalizedDialogBoxController : DialogBoxController
     {
-        [SerializeField] private DialogContent _right;
+        [SerializeField] public DialogContent _right;
 
         protected override DialogContent CurrentContent => CurrentSentence.Side == Side.Left ? _content : _right;
 

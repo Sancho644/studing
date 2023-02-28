@@ -14,9 +14,14 @@ namespace PixelCrew.Creatures.Mobs.Boss
         [ContextMenu("Setup")]
         public void SetColor()
         {
+            SetColor(_color);
+        }
+        
+        public void SetColor(Color color)
+        {
             foreach (var light2d in _lights)
             {
-                light2d.color = _color;
+                light2d.color = color;
             }
         }
     }

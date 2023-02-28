@@ -10,13 +10,6 @@ namespace PixelCrew.UI.Hud
         [SerializeField] private Image _icon;
         [SerializeField] private Image _cooldownImage;
 
-        private GameSession _session;
-
-        private void Start()
-        {
-            _session = FindObjectOfType<GameSession>();
-        }
-
         public void Set(PerkDef perkDef)
         {
             _icon.sprite = perkDef.Icon;
@@ -24,7 +17,7 @@ namespace PixelCrew.UI.Hud
 
         private void Update()
         {
-            var cooldown = _session.PerksModel.Cooldown;
+            var cooldown = GameSession.Instance.PerksModel.Cooldown;
             _cooldownImage.fillAmount = cooldown.RemainingTime / cooldown.Value;
         }
     }

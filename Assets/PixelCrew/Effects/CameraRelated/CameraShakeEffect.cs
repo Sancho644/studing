@@ -18,6 +18,8 @@ namespace PixelCrew.Effects.CameraRelated
         {
             var virtualCamera = GetComponent<CinemachineVirtualCamera>();
             _cameraNoice = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+            _cameraNoice.m_FrequencyGain = 0f;
         }
 
         public void Shake()

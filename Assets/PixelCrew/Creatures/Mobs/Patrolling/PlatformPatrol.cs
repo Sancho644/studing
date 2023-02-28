@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using PixelCrew.Components.ColliderBased;
+using System;
+using UnityEngine.Events;
 
 namespace PixelCrew.Creatures.Mobs.Patrolling
 {
@@ -8,8 +10,8 @@ namespace PixelCrew.Creatures.Mobs.Patrolling
     {
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private LayerCheck _obstacleCheck;
-        [SerializeField] private Creature _creature;
         [SerializeField] private int _direction;
+        [SerializeField] private OnChangeDirection _onChangeDirection;
 
         public LayerCheck ObstacleCheck => _obstacleCheck;
         public LayerCheck GroundCheck => _groundCheck;
@@ -20,16 +22,26 @@ namespace PixelCrew.Creatures.Mobs.Patrolling
             {
                 if (_groundCheck.IsTochingLayer && !_obstacleCheck.IsTochingLayer)
                 {
-                    _creature.SetDirection(new Vector2(_direction, 0));
+                    _onChangeDirection?.Invoke(new Vector2(_direction, 0));
                 }
                 else
                 {
                     _direction = -_direction;
-                    _creature.SetDirection(new Vector2(_direction, 0));
+                    _onChangeDirection?.Invoke(new Vector2(_direction, 0));
                 }
 
                 yield return null;
             }
         }
+
+        public void SetDirection(int direction)
+        {
+            _direction = direction;
+        }
+    }
+
+    [Serializable]
+    public class OnChangeDirection : UnityEvent<Vector2>
+    {
     }
 }

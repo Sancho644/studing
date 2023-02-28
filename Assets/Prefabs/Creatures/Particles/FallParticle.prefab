@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6753797111458649260}
   - component: {fileID: 6753797111458649263}
   - component: {fileID: 6753797111458649262}
-  - component: {fileID: 6753797111458649249}
+  - component: {fileID: 6118752708799599348}
   m_Layer: 0
   m_Name: FallParticle
   m_TagString: Untagged
@@ -109,11 +109,23 @@ MonoBehaviour:
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 6118752708799599348}
+          m_TargetAssemblyTypeName: PixelCrew.Utils.ObjectPool.PoolItem, Assembly-CSharp
+          m_MethodName: Relese
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _onComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6753797111458649249}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PixelCrew.Components.DestroyObjectComponent, Assembly-CSharp
         m_MethodName: DestroyObject
         m_Mode: 1
@@ -125,7 +137,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6753797111458649249
+--- !u!114 &6118752708799599348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,8 +146,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6753797111458649248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889b316a65ea997439bd2f06dfd1fc37, type: 3}
+  m_Script: {fileID: 11500000, guid: af2b03d0c7320c149b6ffa68da91d7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 6753797111458649248}
-  _state: {fileID: 0}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6753797111458649262}
+        m_TargetAssemblyTypeName: PixelCrew.Animations.SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fall
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -15,7 +15,7 @@ MonoBehaviour:
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQfl40CASJm_SANZgbgLYT2jyzme6iaY7FNzxeisTBY8ztE7tzDsqiio9FnXgtSj707lJFMpFywTMTm/pub?gid=1076248151&single=true&output=tsv
   _localeItems:
   - Key: menu_title
-    Value: "menu\r"
+    Value: "Main menu\r"
   - Key: button_start
     Value: "start\r"
   - Key: button_option
@@ -28,19 +28,166 @@ MonoBehaviour:
     Value: "back\r"
   - Key: button_locales
     Value: "languages\r"
-  - Key: Health
+  - Key: health_stat
     Value: "Health\r"
-  - Key: Speed
+  - Key: speed_stat
     Value: "Speed\r"
-  - Key: Range Damage
+  - Key: range_damage_stat
     Value: "Range Damage\r"
   - Key: Level-up
     Value: "Upgrade\r"
-  - Key: shield-info
+  - Key: perk_shield_info
     Value: "It's Forse Shield!\r"
   - Key: crabby-teacher-sentence-0
-    Value: "I can teach you!\r"
+    Value: "Hello pirate! My name is Crab! I'll help you on your adventure, not for
+      free of course...\r"
   - Key: crabby-teacher-sentence-1
-    Value: "Good!\r"
+    Value: "All right! But how can I pay you?\r"
   - Key: crabby-teacher-sentence-2
-    Value: Let's go!
+    Value: "Coins! Hahahaha... I can sell things for coins, I can improve your stats
+      for coins, but I need green gems for perks!\r"
+  - Key: crabby-options-sentence-1
+    Value: "What do you want?\r"
+  - Key: crabby-options-sentence-2
+    Value: "1. Magazine\r"
+  - Key: crabby-options-sentence-3
+    Value: "2. Perks\r"
+  - Key: crabby-options-sentence-4
+    Value: "3. Stats\r"
+  - Key: button_restart
+    Value: "restart\r"
+  - Key: options_title
+    Value: "Options\r"
+  - Key: options_music_settings
+    Value: "Music:\r"
+  - Key: sword_info
+    Value: "It's a sword! You can fight with it and throw it!\r"
+  - Key: key_info
+    Value: "It's a key, it opens doors!\r"
+  - Key: pearl_info
+    Value: "It's a pearl! You can throw with it!\r"
+  - Key: greengem_info
+    Value: "It's a gemstone! You can buy cool stuff with it!\r"
+  - Key: smallhppotion_info
+    Value: "It's a little health potion! Drink it and be well!\r"
+  - Key: largehppotion_info
+    Value: "It's a big health potion! Works like the small one only twice as good!\r"
+  - Key: speeduppotion_info
+    Value: "It's an acceleration potion! Run like scalded!\r"
+  - Key: button_buy
+    Value: "BUY\r"
+  - Key: button_continue
+    Value: "Continue\r"
+  - Key: pause_title
+    Value: "Pause\r"
+  - Key: price_lable_title
+    Value: "Price\r"
+  - Key: button_use
+    Value: "USE\r"
+  - Key: perk_dash_info
+    Value: "It's a spurt! It's a quick move over a short distance!\r"
+  - Key: perk_super-throw_info
+    Value: "It's a super throw! Three thrown swords are better than one!\r"
+  - Key: perk_double-jump_info
+    Value: "It's a double jump! Try it out!\r"
+  - Key: critical_damage_stat
+    Value: "Critical Damage\r"
+  - Key: use_helm
+    Value: "Use helm?\r"
+  - Key: option_yes
+    Value: "Yes\r"
+  - Key: option_no
+    Value: "No\r"
+  - Key: language_title
+    Value: "Language\r"
+  - Key: door_need_key-1
+    Value: "You need a key...\r"
+  - Key: door_need_key-2
+    Value: "Try to find it...\r"
+  - Key: boss_fight_start_1
+    Value: "You killed my son! I will kill you!\r"
+  - Key: boss_fight_start_2
+    Value: "NO! I will kill you!\r"
+  - Key: boss_fight_end_1
+    Value: "NOOOoooooo!!!!!!!!!\r"
+  - Key: boss_fight_end_2
+    Value: "I told ya!\r"
+  - Key: crabby-options-sentence-5
+    Value: "4. Nothing\r"
+  - Key: loading_screne
+    Value: "Loading...\r"
+  - Key: handlings_info_1
+    Value: "movement to the left, to the right and jump\r"
+  - Key: handlings_info_2
+    Value: "attack\r"
+  - Key: handlings_info_3
+    Value: "interact\r"
+  - Key: handlings_info_4
+    Value: "use a quick inventory item\r"
+  - Key: handlings_info_5
+    Value: "quick inventory selector\r"
+  - Key: handlings_info_6
+    Value: "dash\r"
+  - Key: handlings_info_7
+    Value: "candle\r"
+  - Key: handlings_info_8
+    Value: "shield\r"
+  - Key: button_controls
+    Value: "controls\r"
+  - Key: crabby-teacher-sentence-3
+    Value: "But I need green gems to pump up my perks!\r"
+  - Key: crabby-teacher-sentence-4
+    Value: "Got it!\r"
+  - Key: crabby-teacher-sentence-5
+    Value: "Wow! You made it this far!\r"
+  - Key: crabby-teacher-sentence-6
+    Value: "Yeah, well...\r"
+  - Key: crabby-teacher-sentence-7
+    Value: "Then buy the right stuff!\r"
+  - Key: crabby-teacher-sentence-8
+    Value: "By the way, I'd suggest you buy a double jump if you don't already have
+      one...\r"
+  - Key: boss_crabby_fight_start_1
+    Value: "Pirate! I hate pirates!\r"
+  - Key: boss_crabby_fight_start_2
+    Value: "I eat crabs for breakfast!\r"
+  - Key: boss_crabby_fight_start_3
+    Value: "Aaaaaaaaaaah! I'm gonna kill you!!!!\r"
+  - Key: boss_crabby_fight_start_4
+    Value: "Oh...\r"
+  - Key: boss_crabby_fight_end_1
+    Value: "NOOOOOOOOOOOOOOOOOO!!! My father will avenge me!\r"
+  - Key: boss_crabby_fight_end_2
+    Value: "Then I shall have a glorious feast!\r"
+  - Key: crabby-teacher-sentence-9
+    Value: "Wow, it's so dark in here! In case you didn't know, you have a flashlight!
+      Press the Alt button...\r"
+  - Key: crabby-teacher-sentence-10
+    Value: "Whoa! It's true!\r"
+  - Key: crabby-teacher-sentence-11
+    Value: "If your candle goes out, just walk over to one of the candles on the
+      wall to refill yours!\r"
+  - Key: crabby-teacher-sentence-12
+    Value: "I see!\r"
+  - Key: crabby-teacher-sentence-13
+    Value: "Hahahaha! Be careful in the dark, watch your step...\r"
+  - Key: crabby-teacher-sentence-14
+    Value: "It looks like you can't get through here the normal way, you'll have
+      to climb!\r"
+  - Key: crabby-teacher-sentence-15
+    Value: "How do you do that?\r"
+  - Key: crabby-teacher-sentence-16
+    Value: "Jump on the wall and hold down the move button in the direction of the
+      wall!\r"
+  - Key: crabby-teacher-sentence-17
+    Value: "But to jump from wall to wall, you need the Double Leap perk!\r"
+  - Key: crabby-teacher-sentence-18
+    Value: "There's a nasty guy next, I advise you to arm yourself!\r"
+  - Key: crabby-teacher-sentence-19
+    Value: "If I were you, I wouldn't mess with this guy any further...\r"
+  - Key: crabby-teacher-sentence-20
+    Value: "Since you're going there, I advise you to arm yourself as best you can!\r"
+  - Key: crabby-teacher-sentence-21
+    Value: "Congratulations! You beat the starfish! You must be proud of yourself!?\r"
+  - Key: crabby-teacher-sentence-22
+    Value: Open the door to the end of your adventure!

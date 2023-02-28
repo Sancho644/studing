@@ -15,7 +15,7 @@ MonoBehaviour:
   _inventorySize: 10
   _maxHealth: 10
   _stats:
-  - _name: Health
+  - _name: health_stat
     _id: 0
     _icon: {fileID: 21300000, guid: e266a4ce3d7ffa84aae8aa14de8b1c1f, type: 3}
     _levels:
@@ -35,7 +35,7 @@ MonoBehaviour:
       _price:
         _itemId: Coin
         _count: 100
-  - _name: Speed
+  - _name: speed_stat
     _id: 1
     _icon: {fileID: 21300000, guid: eb0d5e42575ea36479fe1eaf56610bed, type: 3}
     _levels:
@@ -51,7 +51,7 @@ MonoBehaviour:
       _price:
         _itemId: Coin
         _count: 20
-  - _name: Range Damage
+  - _name: range_damage_stat
     _id: 2
     _icon: {fileID: 21300000, guid: ecd959f2208fe6c4da56747dda0de7cb, type: 3}
     _levels:
@@ -71,7 +71,7 @@ MonoBehaviour:
       _price:
         _itemId: Coin
         _count: 50
-  - _name: Critical Damage
+  - _name: critical_damage_stat
     _id: 3
     _icon: {fileID: 21300000, guid: 45656534fb01a974ab218960afafcc9a, type: 3}
     _levels:

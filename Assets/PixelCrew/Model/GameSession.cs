@@ -8,6 +8,7 @@ using System.Linq;
 using PixelCrew.Model.Models;
 using Assets.PixelCrew.Model.Models;
 using PixelCrew.Model.Definitions.Player;
+using PixelCrew.Model.Definitions;
 
 namespace PixelCrew.Model
 {
@@ -15,6 +16,8 @@ namespace PixelCrew.Model
     {
         [SerializeField] private PlayerData _data;
         [SerializeField] private string _defaultCheckPoint;
+
+        public static GameSession Instance { get; private set; }
 
         public PlayerData Data => _data;
         private PlayerData _save;
@@ -41,6 +44,7 @@ namespace PixelCrew.Model
                 Save();
                 InitModels();
                 DontDestroyOnLoad(this);
+                Instance = this;
                 StartSession(_defaultCheckPoint);
             }
         }
@@ -83,6 +87,9 @@ namespace PixelCrew.Model
             _trash.Retain(MagazineItemsModel);
 
             _data.Hp.Value = (int)StatsModel.GetValue(StatId.Hp);
+            var perkUsed = PerksModel.Used;
+            var perkCooldown = DefsFacade.I.Perks.Get(perkUsed);
+            PerksModel.Cooldown.Value = perkCooldown.Cooldown;
         }
 
         private void LoadHud()
@@ -130,11 +137,20 @@ namespace PixelCrew.Model
             }
         }
 
-        public readonly List<string> _removedItems = new List<string>();
+        public void SetRemovedItems()
+        {
+            for (int i = 0; i < _removedItems.Count; i++)
+            {
+                _saveRemovedItem.Add(_removedItems[i]);
+            }
+        }
+
+        private List<string> _removedItems = new List<string>();
+        private List<string> _saveRemovedItem = new List<string>();
 
         public bool RestoreState(string itemId)
         {
-            return _removedItems.Contains(itemId);
+            return _saveRemovedItem.Contains(itemId);
         }
 
         public void StoreState(string itemId)
@@ -145,6 +161,9 @@ namespace PixelCrew.Model
 
         private void OnDestroy()
         {
+            if (Instance == null)
+                Instance = null;
+
             _trash.Dispose();
         }
     }

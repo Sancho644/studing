@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5531752644684095555}
   - component: {fileID: 5531752644684095548}
   - component: {fileID: 5531752644684095549}
-  - component: {fileID: 5531752644684095551}
   - component: {fileID: 5531752644684095553}
   - component: {fileID: 1903333996378152975}
   - component: {fileID: 8732162961976698949}
   - component: {fileID: 2173250438331633428}
   - component: {fileID: 3515813878127770767}
+  - component: {fileID: 5755565912608186266}
   m_Layer: 13
   m_Name: SilverCoinParticle
   m_TagString: Untagged
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -875878311
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2322180950842035098, guid: 96ed589ec9d3e08458f55d6de8b229ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,20 +105,6 @@ CircleCollider2D:
   m_Offset: {x: 0.011082053, y: 0.014776021}
   serializedVersion: 2
   m_Radius: 0.17119408
---- !u!114 &5531752644684095551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5531752644684095544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889b316a65ea997439bd2f06dfd1fc37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 5531752644684095544}
-  _state: {fileID: 0}
 --- !u!114 &5531752644684095553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,10 +141,9 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5531752644684095551}
-          m_TargetAssemblyTypeName: PixelCrew.Components.DestroyObjectComponent,
-            Assembly-CSharp
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 5755565912608186266}
+          m_TargetAssemblyTypeName: PixelCrew.Utils.ObjectPool.PoolItem, Assembly-CSharp
+          m_MethodName: Relese
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -183,7 +168,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -236,8 +221,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1903333996378152975}
         m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
-        m_MethodName: set_gravityScale
-        m_Mode: 4
+        m_MethodName: set_simulated
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -296,3 +281,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 4662b23eb3a758f44abb04cdfde881e4, type: 3}
+--- !u!114 &5755565912608186266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5531752644684095544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2b03d0c7320c149b6ffa68da91d7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5531752644684095549}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1903333996378152975}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
+        m_MethodName: set_simulated
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5531752644684095553}
+        m_TargetAssemblyTypeName: PixelCrew.Animations.SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: idle
+          m_BoolArgument: 0
+        m_CallState: 2

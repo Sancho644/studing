@@ -3,6 +3,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using System;
 using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 
 namespace PixelCrew.Components.GoBased
 {
@@ -16,6 +17,7 @@ namespace PixelCrew.Components.GoBased
 
         [SerializeField] private float _waitTime = 0.1f;
         [SerializeField] private float _speed = 6;
+        [SerializeField] private bool _usePool;
 
         private Coroutine _routine;
 
@@ -45,7 +47,10 @@ namespace PixelCrew.Components.GoBased
 
         private void Spawn(GameObject particles)
         {
-            var instance = SpawnUtils.Spawn(particles, transform.position);
+            var instance = _usePool
+                ? Pool.Instance.Get(particles, transform.position)
+                : SpawnUtils.Spawn(particles, transform.position);
+
             var rigidBody = instance.GetComponent<Rigidbody2D>();
 
             var randomAngle = Random.Range(0, _sectorAngle);

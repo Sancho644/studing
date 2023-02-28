@@ -7,9 +7,10 @@ namespace PixelCrew.Components.LevelManagement
     public class ExitLevelComponent : MonoBehaviour
     {
         [SerializeField] private string _sceneName;
+
         public void Exit()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             session.Save();
             var loader = FindObjectOfType<LevelLoader>();
             loader.LoadLevel(_sceneName);

@@ -10,23 +10,30 @@ namespace PixelCrew.Model.Data
     public class LevelData
     {
         [SerializeField] private List<LevelProgress> _progress;
-        
+
         public int GetLevel(StatId id)
         {
-            var progress = _progress.FirstOrDefault(x => x.Id == id);
-            return progress?.Level ?? 0;
+            foreach (var levelProgress in _progress)
+            {
+                if (levelProgress.Id == id)
+                {
+                    return levelProgress.Level;
+                }
+            }
+
+            return 0;
         }
 
         public void LevelUp(StatId id)
         {
             var progress = _progress.FirstOrDefault(x => x.Id == id);
-            if(progress == null)
+            if (progress == null)
             {
                 _progress.Add(new LevelProgress(id, 1));
             }
             else
             {
-                progress.Level++; 
+                progress.Level++;
             }
         }
     }

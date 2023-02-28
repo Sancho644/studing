@@ -18,7 +18,7 @@ namespace PixelCrew.Components.LevelManagement
          
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
 
             if (_session.IsChecked(_id))
                 _setChecked?.Invoke();
@@ -28,6 +28,7 @@ namespace PixelCrew.Components.LevelManagement
 
         public void Check()
         {
+            _session.SetRemovedItems();
             _session.SetChecked(_id);
             _setChecked?.Invoke();
         }

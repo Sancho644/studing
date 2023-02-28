@@ -5,7 +5,6 @@ using PixelCrew.Model;
 using PixelCrew.Components;
 using PixelCrew.Model.Data;
 using UnityEngine;
-using UnityEditor.Animations;
 using System.Collections;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Model.Definitions;
@@ -25,8 +24,8 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private Cooldown _dashCooldown;
 
-        [SerializeField] private AnimatorController _armed;
-        [SerializeField] private AnimatorController _unarmed;
+        [SerializeField] private RuntimeAnimatorController _armed;
+        [SerializeField] private RuntimeAnimatorController _unarmed;
 
         [Header("Super throw")]
         [SerializeField] private Cooldown _superThrowCooldown;
@@ -80,7 +79,7 @@ namespace PixelCrew.Creatures.Hero
         {
             _animator = GetComponent<Animator>();
             _cameraShake = FindObjectOfType<CameraShakeEffect>();
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _health = GetComponent<HealthComponent>();
 
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
@@ -153,7 +152,7 @@ namespace PixelCrew.Creatures.Hero
             if (_isOnWall)
             {
                 return 0f;
-            }
+            }           
 
             return base.CalculateYVelocity();
         }
@@ -332,17 +331,28 @@ namespace PixelCrew.Creatures.Hero
             switch (potion.Effect)
             {
                 case Effect.AddHp:
-                    var health = (int)potion.Value + _session.Data.Hp.Value;
-                    _session.Data.Hp.Value = Mathf.Min(health, (int)_session.StatsModel.GetValue(StatId.Hp));
-                    _health.SetHealth(_session.Data.Hp.Value);
+                    UseHealthPotion();
                     break;
                 case Effect.SpeedUp:
                     _speedUpCooldown.Value = +_speedUpCooldown.RemainingTime + potion.Time;
                     _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
                     _speedUpCooldown.Reset();
+                    _session.Data.Inventory.Remove(potion.Id, 1);
                     break;
             }
+        }
 
+        private void UseHealthPotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+            var currentHealth = _session.Data.Hp.Value;
+            var maxHealth = _session.StatsModel.GetValue(StatId.Hp);
+            if (currentHealth == maxHealth) return;
+
+            var health = (int)potion.Value + _session.Data.Hp.Value;
+            _session.Data.Hp.Value = Mathf.Min(health, (int)_session.StatsModel.GetValue(StatId.Hp));
+            _health.SetHealth(_session.Data.Hp.Value);
+            _particles.Spawn("Heal");
             _session.Data.Inventory.Remove(potion.Id, 1);
         }
 

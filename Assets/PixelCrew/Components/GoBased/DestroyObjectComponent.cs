@@ -7,11 +7,12 @@ namespace PixelCrew.Components.GoBased
     {
         [SerializeField] private GameObject _objectToDestroy;
         [SerializeField] private RestoreStateComponent _state;
+
         public void DestroyObject()
         {
             Destroy(_objectToDestroy);
             if (_state != null)
-                FindObjectOfType<GameSession>().StoreState(_state.Id);
+                GameSession.Instance.StoreState(_state.Id);
         }
     }
 }

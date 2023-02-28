@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8156339520278185658}
   - component: {fileID: 8156339520278185659}
   - component: {fileID: 8156339520278185656}
-  - component: {fileID: 8156339520278185657}
+  - component: {fileID: 3512296219605607254}
   m_Layer: 0
   m_Name: SwordSlashParticle
   m_TagString: Untagged
@@ -108,10 +108,9 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8156339520278185657}
-          m_TargetAssemblyTypeName: PixelCrew.Components.DestroyObjectComponent,
-            Assembly-CSharp
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 3512296219605607254}
+          m_TargetAssemblyTypeName: PixelCrew.Utils.ObjectPool.PoolItem, Assembly-CSharp
+          m_MethodName: Relese
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -124,7 +123,7 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8156339520278185657
+--- !u!114 &3512296219605607254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +132,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8156339520278185662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889b316a65ea997439bd2f06dfd1fc37, type: 3}
+  m_Script: {fileID: 11500000, guid: af2b03d0c7320c149b6ffa68da91d7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 8156339520278185662}
-  _state: {fileID: 0}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8156339520278185656}
+        m_TargetAssemblyTypeName: PixelCrew.Animations.SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slash
+          m_BoolArgument: 0
+        m_CallState: 2

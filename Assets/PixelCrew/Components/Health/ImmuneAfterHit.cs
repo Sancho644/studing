@@ -7,7 +7,7 @@ namespace PixelCrew.Components.Health
     [RequireComponent(typeof(HealthComponent))]
     public class ImmuneAfterHit : MonoBehaviour
     {
-        [SerializeField] private float _immuneTime;
+        [SerializeField] public float _immuneTime;
 
         private HealthComponent _health;
         private Coroutine _coroutine;
@@ -24,6 +24,11 @@ namespace PixelCrew.Components.Health
             TryStop();
             if (_immuneTime > 0)
                 _coroutine = StartCoroutine(MakeImmune());
+        }
+
+        public void SetTime(float time)
+        {
+            _immuneTime = time;
         }
 
         private void TryStop()

@@ -16,8 +16,8 @@ namespace PixelCrew.UI.Windows.Magazine
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
-      
+            _session = GameSession.Instance;
+
             UpdateView();
         }
 

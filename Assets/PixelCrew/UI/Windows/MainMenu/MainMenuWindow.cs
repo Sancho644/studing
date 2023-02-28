@@ -29,6 +29,11 @@ namespace PixelCrew.UI.MainMenu
             WindowUtils.CreateWindow("UI/LocalizationWindow");
         }
 
+        public void OnControls()
+        {
+            WindowUtils.CreateWindow("UI/HandlingsPC");
+        }
+
         public void OnExit()
         {
             _closeAction = () =>

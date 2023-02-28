@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 6996646648049631669}
   - component: {fileID: 6846055140339140229}
   - component: {fileID: 932017641595590539}
-  - component: {fileID: 3374113950294971370}
   - component: {fileID: 5891408891147443974}
+  - component: {fileID: 8751487119483467686}
   m_Layer: 0
   m_Name: SwordProjectile
   m_TagString: Untagged
@@ -198,7 +198,7 @@ MonoBehaviour:
   _tag: Enemy
   _layer:
     serializedVersion: 2
-    m_Bits: 2112
+    m_Bits: 18496
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -214,8 +214,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3374113950294971370}
-        m_TargetAssemblyTypeName: PixelCrew.Components.DestroyObjectComponent, Assembly-CSharp
+      - m_Target: {fileID: 8751487119483467686}
+        m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.DestroyObjectComponent,
+          Assembly-CSharp
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78c409d9161dab4e9bfe271156d8260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Ground
+  _tag: Walls
   _layer:
     serializedVersion: 2
     m_Bits: 1088
@@ -270,8 +271,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3374113950294971370}
-        m_TargetAssemblyTypeName: PixelCrew.Components.DestroyObjectComponent, Assembly-CSharp
+      - m_Target: {fileID: 8751487119483467686}
+        m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.DestroyObjectComponent,
+          Assembly-CSharp
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -282,20 +284,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3374113950294971370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6753797111458649248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889b316a65ea997439bd2f06dfd1fc37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 6753797111458649248}
-  _state: {fileID: 0}
 --- !u!114 &5891408891147443974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +303,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3374113950294971370}
+      - m_Target: {fileID: 8751487119483467686}
         m_TargetAssemblyTypeName: PixelCrew.Components.GoBased.DestroyObjectComponent,
           Assembly-CSharp
         m_MethodName: DestroyObject
@@ -328,6 +316,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8751487119483467686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753797111458649248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889b316a65ea997439bd2f06dfd1fc37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 6753797111458649248}
+  _state: {fileID: 0}
 --- !u!1 &7685585822937963247
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,3 +376,4 @@ MonoBehaviour:
   _target: {fileID: 8901315643673295657}
   _prefab: {fileID: 6753797111458649248, guid: 3f2ff8116e23cff46879da2ccec756e4, type: 3}
   _invertXScale: 0
+  _usePool: 0

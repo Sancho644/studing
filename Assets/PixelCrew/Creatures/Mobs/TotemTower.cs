@@ -1,8 +1,8 @@
 using UnityEngine;
 using PixelCrew.Utils;
 using System.Collections.Generic;
-using System.Linq;
 using PixelCrew.Components.Health;
+using System.Linq;
 
 namespace PixelCrew.Creatures.Mobs
 {
@@ -36,22 +36,38 @@ namespace PixelCrew.Creatures.Mobs
 
         private void Update()
         {
-            if(_traps.Count == 0)
+            for (int i = 0; i < _traps.Count; i++)
+            {
+                if (_traps[i] == null) _traps.RemoveAt(i);
+            }
+
+            if (_traps.Count == 0)
             {
                 enabled = false;
                 Destroy(gameObject, 1f);
             }
 
-            var hasAnyTarget = _traps.Any(x => x._vision.IsTochingLayer);
+            var hasAnyTarget = HasAnyTarget();
             if (hasAnyTarget)
             {
                 if (_cooldown.IsReady)
                 {
                     _traps[_currentTrap].Shoot();
                     _cooldown.Reset();
-                    _currentTrap = (int) Mathf.Repeat(_currentTrap + 1, _traps.Count);
+                    _currentTrap = (int)Mathf.Repeat(_currentTrap + 1, _traps.Count);
                 }
             }
+        }
+
+        private bool HasAnyTarget()
+        {
+            foreach (var shootingTrapAi in _traps)
+            {
+                if (shootingTrapAi._vision.IsTochingLayer)
+                    return true;
+            }
+
+            return false;
         }
     }
 }

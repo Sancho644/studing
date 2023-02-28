@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OutsideBackgroundProps
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 3f494811f94ab3645be4fefbfe065dbe, type: 3}
+    - {fileID: 2800000, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+    - {fileID: 2800000, guid: 09c9deeeadb3c2149b1620de31f3b8e2, type: 3}
+    - {fileID: 2800000, guid: 34122a44beba1c64cbe5c06ffc7fc805, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -8843944345914528079, guid: 3f494811f94ab3645be4fefbfe065dbe, type: 3}
+  - {fileID: -1898659343009958212, guid: 3f494811f94ab3645be4fefbfe065dbe, type: 3}
+  - {fileID: -5088061633143109107, guid: 3f494811f94ab3645be4fefbfe065dbe, type: 3}
+  - {fileID: -3808486951342339979, guid: 3f494811f94ab3645be4fefbfe065dbe, type: 3}
+  - {fileID: 3538689430123128980, guid: 34122a44beba1c64cbe5c06ffc7fc805, type: 3}
+  - {fileID: 759440405009013545, guid: 34122a44beba1c64cbe5c06ffc7fc805, type: 3}
+  - {fileID: 8506211366736525064, guid: 34122a44beba1c64cbe5c06ffc7fc805, type: 3}
+  - {fileID: -5528557573366522457, guid: 34122a44beba1c64cbe5c06ffc7fc805, type: 3}
+  - {fileID: 802857254159732353, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 1278475588773109743, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: -6487789065682943626, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: -2645899244835350471, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 7744047822205964645, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 1981876992937066421, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 262518517033693272, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 8683632313750085214, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 1400697303485121525, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 762285979657935423, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: 3531074664856275464, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: -6024505487453159095, guid: 09645a458fba74f4d9dab7ac87056329, type: 3}
+  - {fileID: -6505298659582443948, guid: 09c9deeeadb3c2149b1620de31f3b8e2, type: 3}
+  - {fileID: -6018279857378552221, guid: 09c9deeeadb3c2149b1620de31f3b8e2, type: 3}
+  - {fileID: -2749089684739404911, guid: 09c9deeeadb3c2149b1620de31f3b8e2, type: 3}
+  - {fileID: -7718236803453008505, guid: 09c9deeeadb3c2149b1620de31f3b8e2, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - WaterReflectSmall_1
+  - WaterReflectSmall_0
+  - WaterReflectSmall_3
+  - WaterReflectSmall_2
+  - WaterReflectMedium_3
+  - WaterReflectMedium_2
+  - WaterReflectMedium_1
+  - WaterReflectMedium_0
+  - PalmTreeBackgroundSheet_10
+  - PalmTreeBackgroundSheet_11
+  - PalmTreeBackgroundSheet_5
+  - PalmTreeBackgroundSheet_4
+  - PalmTreeBackgroundSheet_7
+  - PalmTreeBackgroundSheet_6
+  - PalmTreeBackgroundSheet_1
+  - PalmTreeBackgroundSheet_0
+  - PalmTreeBackgroundSheet_3
+  - PalmTreeBackgroundSheet_2
+  - PalmTreeBackgroundSheet_9
+  - PalmTreeBackgroundSheet_8
+  - WaterReflectLarge_1
+  - WaterReflectLarge_0
+  - WaterReflectLarge_3
+  - WaterReflectLarge_2
+  m_RenderDataMap: {}
+  m_Tag: OutsideBackgroundProps
+  m_IsVariant: 0

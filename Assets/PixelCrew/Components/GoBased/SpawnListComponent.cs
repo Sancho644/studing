@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Linq;
 
 namespace PixelCrew.Components.GoBased
 {
@@ -18,9 +17,15 @@ namespace PixelCrew.Components.GoBased
 
         public void Spawn(string id)
         {
-            var spawner = _spawners.FirstOrDefault(element => element.Id == id);
-            spawner?.Component.Spawn();  
+            foreach (var element in _spawners)
+            {
+                if (element.Id == id)
+                {
+                    element.Component.Spawn();
+                }
+            }
         }
+
 
 
         [Serializable]
