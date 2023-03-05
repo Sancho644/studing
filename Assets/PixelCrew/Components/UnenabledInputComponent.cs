@@ -17,6 +17,7 @@ namespace PixelCrew.Components
 
         private void SetLockInput(PlayerInput heroInput)
         {
+
             if (heroInput != null)
             {
                 if (heroInput.enabled == false)

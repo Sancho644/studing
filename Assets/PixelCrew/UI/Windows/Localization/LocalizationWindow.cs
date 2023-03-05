@@ -8,16 +8,16 @@ namespace PixelCrew.UI.Windows.Localization
     public class LocalizationWindow : AnimatedWindow
     {
         [SerializeField] private Transform _container;
-        [SerializeField] private LocaleItemWidjet _prefab;
+        [SerializeField] private LocaleItemWidget _prefab;
 
-        private DataGroup<LocaleInfo, LocaleItemWidjet> _dataGroup;
+        private DataGroup<LocaleInfo, LocaleItemWidget> _dataGroup;
 
         private string[] _supportedLocales = new[] { "en", "ru" };
 
         protected override void Start()
         {
             base.Start();
-            _dataGroup = new DataGroup<LocaleInfo, LocaleItemWidjet>(_prefab, _container);
+            _dataGroup = new DataGroup<LocaleInfo, LocaleItemWidget>(_prefab, _container);
             _dataGroup.SetData(ComposeData());
         }
 

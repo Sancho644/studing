@@ -14,7 +14,7 @@ namespace PixelCrew.UI.Windows.PlayerStats
         [SerializeField] private StatWidget _prefab;
 
         [SerializeField] private Button _upgradeButton;
-        [SerializeField] private ItemWidjet _price;
+        [SerializeField] private ItemWidget _price;
 
         private DataGroup<StatDef, StatWidget> _dataGroup;
 

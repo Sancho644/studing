@@ -27,7 +27,7 @@ namespace PixelCrew.Model
 
         public PerksModel PerksModel { get; private set; }
         public StatsModel StatsModel { get; private set; }
-        public MagazineItemsModel MagazineItemsModel { get; private set; }
+        public ShopItemsModel MagazineItemsModel { get; private set; }
 
         private readonly List<string> _checkpoints = new List<string>();
 
@@ -83,7 +83,7 @@ namespace PixelCrew.Model
             StatsModel = new StatsModel(_data);
             _trash.Retain(StatsModel);
 
-            MagazineItemsModel = new MagazineItemsModel(_data);
+            MagazineItemsModel = new ShopItemsModel(_data);
             _trash.Retain(MagazineItemsModel);
 
             _data.Hp.Value = (int)StatsModel.GetValue(StatId.Hp);

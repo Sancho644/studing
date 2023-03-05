@@ -25601,6 +25601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1663360614}
     m_Modifications:
+    - target: {fileID: 943121562, guid: fc43aa31e649cc74f870e36fccb6835e, type: 3}
+      propertyPath: _data.Options.Array.data[0].OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: UI/ShopWindow
+      objectReference: {fileID: 0}
     - target: {fileID: 9157819273232628256, guid: fc43aa31e649cc74f870e36fccb6835e, type: 3}
       propertyPath: m_Name
       value: CrabbyNPC

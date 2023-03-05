@@ -1,12 +1,13 @@
-﻿using PixelCrew.UI.Widgets;
-using UnityEngine;
+﻿using UnityEngine;
 using PixelCrew.Components.Health;
 using PixelCrew.Utils.Disposables;
 
-namespace Assets.PixelCrew.UI.Widgets
+namespace PixelCrew.UI.Widgets
 {
     public class LifeBarWidget : MonoBehaviour
     {
+        [SerializeField] private Transform _target;
+        [SerializeField] private RectTransform _lifeBarScale;
         [SerializeField] private ProgressBarWidget _lifeBar;
         [SerializeField] private HealthComponent _hp;
 
@@ -26,6 +27,14 @@ namespace Assets.PixelCrew.UI.Widgets
             _trash.Retain(_hp._onChange.Subscribe(OnHpChanged));
         }
 
+        private void Update()
+        {
+            var scale = _target.lossyScale;
+
+            if (scale.x == -1) _lifeBarScale.localScale = new Vector3(-1f, 1f, 1f);
+            else _lifeBarScale.localScale = new Vector3(1f, 1f, 1f);
+        }
+
         private void OnDie()
         {
             Destroy(gameObject);
@@ -33,7 +42,7 @@ namespace Assets.PixelCrew.UI.Widgets
 
         private void OnHpChanged(int hp)
         {
-            var progress = (float) hp / _maxHp;
+            var progress = (float)hp / _maxHp;
             _lifeBar.SetProgress(progress);
         }
 

@@ -2,7 +2,6 @@ using UnityEngine;
 using PixelCrew.Utils;
 using System.Collections.Generic;
 using PixelCrew.Components.Health;
-using System.Linq;
 
 namespace PixelCrew.Creatures.Mobs
 {

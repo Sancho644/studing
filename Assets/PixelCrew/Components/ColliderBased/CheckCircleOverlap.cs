@@ -13,7 +13,7 @@ namespace PixelCrew.Components.ColliderBased
         [SerializeField] private string[] _tags;
         [SerializeField] private OnOverlapEvent _onOverlap;
 
-        private Collider2D[] _interactionResult = new Collider2D[10];
+        private readonly Collider2D[] _interactionResult = new Collider2D[10];
 
 #if     UNITY_EDITOR
         private void OnDrawGizmosSelected()

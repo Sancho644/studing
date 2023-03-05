@@ -15,7 +15,7 @@ namespace PixelCrew.Components.Audio
         private void Start()
         {
             _source = GetComponent<AudioSource>();
-
+             
             _model = FindProperty();
             _model.OnChanged += OnSoundSettingsChanged;
             OnSoundSettingsChanged(_model.Value, _model.Value);
@@ -34,6 +34,8 @@ namespace PixelCrew.Components.Audio
                     return GameSettings.I.Music;
                 case SoundSetting.Sfx:
                     return GameSettings.I.Sfx;
+                default:
+                    break;
             }
 
             throw new ArgumentException("Undefined mode");

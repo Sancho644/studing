@@ -23,7 +23,6 @@ namespace PixelCrew.Components.Interactions
                 var numItems = session.Data.Inventory.Count(item.Id);
                 if (numItems < item.Value)
                     areAllReauirementsMet = false;
-
             }
 
             if (areAllReauirementsMet)

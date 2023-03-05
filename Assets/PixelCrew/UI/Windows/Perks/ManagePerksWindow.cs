@@ -13,11 +13,11 @@ namespace PixelCrew.UI.Windows.Perks
     {
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _useButton;
-        [SerializeField] private ItemWidjet _price;
+        [SerializeField] private ItemWidget _price;
         [SerializeField] private Text _infoText;
         [SerializeField] private Transform _perksContainer;
 
-        private PredefinedDataGroup<PerkDef, PerkWidjet> _dataGroup;
+        private PredefinedDataGroup<PerkDef, PerkWidget> _dataGroup;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         private GameSession _session;
 
@@ -25,7 +25,7 @@ namespace PixelCrew.UI.Windows.Perks
         {
             base.Start();
 
-            _dataGroup = new PredefinedDataGroup<PerkDef, PerkWidjet>(_perksContainer);
+            _dataGroup = new PredefinedDataGroup<PerkDef, PerkWidget>(_perksContainer);
             _session = GameSession.Instance;
 
             _trash.Retain(_session.PerksModel.Subscribe(OnPerksChanged));

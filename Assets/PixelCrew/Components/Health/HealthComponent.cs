@@ -13,7 +13,7 @@ namespace PixelCrew.Components.Health
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] public HealthChangeEvent _onChange;
 
-        private Lock _immune = new Lock();
+        private readonly Lock _immune = new Lock();
 
         public int Health => _health;
 

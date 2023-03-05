@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 191077287859966194}
-  _prefab: {fileID: 2771854502146247797}
+  _prefab: {fileID: 3673867520052856863}
 --- !u!1 &191077286739676647
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 2537804285876175740}
   - component: {fileID: 3335494376113350033}
   - component: {fileID: 38143227}
-  - component: {fileID: 2771854502146247797}
+  - component: {fileID: 3673867520052856863}
   m_Layer: 5
   m_Name: LocalItem
   m_TagString: Untagged
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2771854502146247797}
-        m_TargetAssemblyTypeName: PixelCrew.UI.Windows.Localization.LocaleItemWidjet,
+      - m_Target: {fileID: 3673867520052856863}
+        m_TargetAssemblyTypeName: PixelCrew.UI.Windows.Localization.LocaleItemWidget,
           Assembly-CSharp
         m_MethodName: OnSelected
         m_Mode: 1
@@ -535,7 +535,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2771854502146247797
+--- !u!114 &3673867520052856863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -544,7 +544,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2961629795120678873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7699a378cd9289b4ea224e858a836d96, type: 3}
+  m_Script: {fileID: 11500000, guid: d3461fd76ab52384da761a4eb728c2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 3335494376113350033}

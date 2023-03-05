@@ -49,7 +49,7 @@ MonoBehaviour:
   - Key: crabby-options-sentence-1
     Value: "What do you want?\r"
   - Key: crabby-options-sentence-2
-    Value: "1. Magazine\r"
+    Value: "1. Shop\r"
   - Key: crabby-options-sentence-3
     Value: "2. Perks\r"
   - Key: crabby-options-sentence-4

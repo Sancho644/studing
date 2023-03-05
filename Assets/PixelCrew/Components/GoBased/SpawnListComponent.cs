@@ -26,8 +26,6 @@ namespace PixelCrew.Components.GoBased
             }
         }
 
-
-
         [Serializable]
         public class SpawnData
         {
